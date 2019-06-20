@@ -1,0 +1,107 @@
+.header-top {
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	padding-top: 10px;
+	margin-bottom: 50px;
+
+	font-family: SegoeUI, serif;
+	font-size: 11px;
+	font-weight: 400;
+	color:$light-text;
+}
+.header-top__phone {
+	padding-left: 25px;
+	position:relative;
+	&:before {
+		content:'';
+
+		width:20px;
+		height:15px;
+
+		position: absolute;
+		top:2px;
+		left:0;
+
+		background:url('../img/phone-icon.svg');
+		background-repeat: no-repeat;
+	}
+}
+.header-top__user-message {
+	font-size: 12px;
+}
+.header-top__user-btn {
+	padding: 0;
+	border:none;
+	background-color: transparent;
+	color:$blue;
+	cursor: pointer;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+.header-top__lists-wrapper {
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	min-width:230px;
+}
+.header-top__list {
+	display:flex;
+	flex-direction: row;
+	
+	margin-top: -10px;
+}
+.header-top__list.currency {
+	font-size: 12px;
+}
+.header-top__item a {
+	display:block;
+	padding:20px 10px 10px 10px;
+	margin-right: 5px;
+
+	background-color: #e6e9ed;
+
+	text-align: center;
+	color:#000;
+
+	&:hover {
+		background-color: #d5e4f1;
+	}
+}
+.header-top__item.active {
+	a {
+		background-color: $blue;
+		color:#fff;
+	}
+}
+
+@media (max-width:1024px) {
+	.header-top {
+		flex-wrap: wrap;
+		justify-content: space-around;
+		margin-bottom: 20px;
+	}
+	.header-top__user-message {
+		width:100%;
+		margin-top: 30px;
+		text-align: center;
+		order:1;
+	}
+	.header-top__lists-wrapper {
+		min-width:250px;
+	}
+}
+
+@media (max-width:767px) {
+	.header-top {
+		// padding-right: 45px;
+	}
+	.header-top__phone {
+		margin-top: 20px;
+		order:1;
+	}
+}

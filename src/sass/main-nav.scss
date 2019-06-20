@@ -1,0 +1,135 @@
+.main-nav {
+	margin-bottom: 50px;
+}
+.main-nav__burger {
+	display:none;
+}
+.main-nav__list {
+	display:flex;
+	flex-direction:row;	
+
+	min-width:732px;
+	padding-right: 100px;
+}
+
+.main-nav__link {
+	color:$light-text;
+	text-transform: uppercase;
+	padding:20px;
+	&[href]:hover {
+		background-color: #d5e4f1;
+	}
+}
+.main-nav__link--current{
+	background-color: $blue;
+	color:#fff;
+}
+
+.main-nav__item.spray {
+	position: relative;
+	&:hover .main-nav__sublist {
+		display:block;
+		z-index: 1;
+	}
+}
+.main-nav__sublist {
+	display:none;
+
+	position:absolute;
+	top:40px;
+	left:0;
+
+	min-width:215px;
+	min-height:161px;
+	background-color: #fff;
+	box-shadow: 0 3px 20px 3px rgba(0,0,0,.2);
+}
+.main-nav__sublink {
+	display:block;
+	padding: 10px;
+	padding-left: 20px;
+	border:.5px solid rgba(0,0,0,.1);
+
+	color:$light-text;
+	&:hover {
+		background-color:#d5e4f1;
+	}
+}
+
+@media (max-width:1024px) {
+	.main-nav__list {
+		justify-content: center;
+		padding-right: 0;
+	}
+}
+
+@media (max-width:767px) {
+	.main-nav {
+		margin-bottom: 0;
+	}
+	.main-nav__burger {
+		background-color: transparent;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 24px;
+		display:block;
+		padding-right: 30px;
+		margin: 0 auto;
+		margin-bottom: 30px;
+
+		border:none;
+		position: relative;
+		&:after {
+			content:'';
+			width:20px;
+			height:3px;
+			position: absolute;
+			top:13px;
+			right:2px;
+			background-color: #000;
+
+			box-shadow: 0 6px 0 0 #000, 0 -6px 0 0 #000;
+			transition:box-shadow .3s linear;
+		}
+		&:hover:after {
+			box-shadow:none;
+			transition:box-shadow .3s linear;
+		}
+	}
+	.main-nav__list {
+		display:none;
+
+		flex-direction: column;
+		min-width:100%;
+		padding-top: 30px;
+	}
+	.main-nav__list--open {
+		display:block;
+		transition: min-height .5s linear;
+	}
+	.main-nav__item {
+		width:100%;
+		text-align: center;
+		line-height: 60px;
+		background-color: #fff;
+	}
+	.main-nav__link {
+		display:block;
+		text-align: center;
+		padding: 0;
+		width:100%;
+	}
+
+	.main-nav__sublist {
+		position: static;
+		border:1px solid rgba(#000,0.3);
+		width:100%;
+	}
+	.main-nav__item.spray {
+		min-height:60px;
+		transition:min-height .5s ease;
+		&:hover .main-nav__sublist {
+		display:block;
+		}
+	}
+}
